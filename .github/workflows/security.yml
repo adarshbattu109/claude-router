@@ -1,0 +1,26 @@
+name: Security
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+  schedule:
+    - cron: "30 5 * * 1"
+
+permissions:
+  contents: read
+
+jobs:
+  dependency-audit:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: astral-sh/setup-uv@v5
+        with:
+          version: latest
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.14"
+      - run: uv export --frozen --no-dev --format requirements.txt -o requirements.txt
+      - run: uv tool run pip-audit -r requirements.txt

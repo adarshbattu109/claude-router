@@ -2,6 +2,11 @@
 
 Claude Router is a local, Claude-compatible proxy for routing requests to Ollama and remote AI providers. It exposes an Anthropic-compatible `/v1/messages` endpoint for Claude clients and an OpenAI-compatible `/v1/chat/completions` endpoint for other clients.
 
+[![CI](https://github.com/adarshbattu109/claude-router/actions/workflows/ci.yml/badge.svg)](https://github.com/adarshbattu109/claude-router/actions/workflows/ci.yml)
+[![License](https://img.shields.io/badge/license-Apache--2.0-blue.svg)](LICENSE)
+
+See [CONTRIBUTING.md](CONTRIBUTING.md), [CODE_OF_CONDUCT.md](CODE_OF_CONDUCT.md), and [SECURITY.md](SECURITY.md) for project policies.
+
 The router currently supports:
 
 - Ollama models discovered from `/api/tags`.
