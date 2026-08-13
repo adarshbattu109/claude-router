@@ -12,3 +12,6 @@ wheels/
 # Local credentials
 .env
 .env.json
+dist/
+build/
+*.egg-info/

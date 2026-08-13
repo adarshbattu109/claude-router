@@ -25,5 +25,12 @@ pythonpath = [".", "src"]
 claude-router = "claude_router:main"
 
 [build-system]
-requires = ["uv_build>=0.12.3,<0.13.0"]
-build-backend = "uv_build"
+requires = ["setuptools>=75.0.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools]
+package-dir = {"" = "src", "app" = "app"}
+
+[tool.setuptools.packages.find]
+where = ["src", "."]
+include = ["claude_router*", "helpers*", "constants*", "app*"]

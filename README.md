@@ -28,6 +28,38 @@ Clone the repository and install the project dependencies:
 uv sync
 ```
 
+Once the project is published to PyPI, install the command-line application with
+the hosted installer:
+
+```bash
+curl -fsSL https://raw.githubusercontent.com/<owner>/<repo>/main/install.sh | sh
+```
+
+Build and publish a release with:
+
+```bash
+uv build
+uv publish
+```
+
+Before publishing to PyPI, the installer can target a Git repository instead:
+
+```bash
+CLAUDE_ROUTER_PACKAGE="git+https://github.com/<owner>/<repo>.git" \\
+	sh -c 'curl -fsSL https://raw.githubusercontent.com/<owner>/<repo>/main/install.sh | sh'
+```
+
+The installer installs `claude-router` as a `uv` tool and creates a user
+configuration file at:
+
+```text
+~/.config/claude-router/config.json
+```
+
+Set `XDG_CONFIG_HOME` to use a different configuration directory, or set
+`CLAUDE_ROUTER_CONFIG` to point to a specific JSON file. When running from a
+checkout, a project-local `.env.json` takes precedence if it exists.
+
 Install development dependencies, including pytest:
 
 ```bash
