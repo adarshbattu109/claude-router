@@ -17,7 +17,7 @@ jobs:
       - uses: astral-sh/setup-uv@v5
         with:
           version: latest
-      - uses: actions/setup-python@v5
+      - uses: actions/setup-python@v7
         with:
           python-version: "3.14"
       - run: uv sync --dev
@@ -30,7 +30,7 @@ jobs:
       - uses: astral-sh/setup-uv@v5
         with:
           version: latest
-      - uses: actions/setup-python@v5
+      - uses: actions/setup-python@v7
         with:
           python-version: "3.14"
       - run: uv sync --dev
@@ -43,7 +43,7 @@ jobs:
       - uses: astral-sh/setup-uv@v5
         with:
           version: latest
-      - uses: actions/setup-python@v5
+      - uses: actions/setup-python@v7
         with:
           python-version: "3.14"
       - run: uv build
