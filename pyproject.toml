@@ -25,7 +25,7 @@ pythonpath = [".", "src"]
 claude-router = "claude_router:main"
 
 [build-system]
-requires = ["setuptools>=75.0.0", "wheel"]
+requires = ["setuptools>=84.0.0", "wheel"]
 build-backend = "setuptools.build_meta"
 
 [tool.setuptools]
